@@ -1,0 +1,34 @@
+body {
+    background-color: lightblue;
+}
+
+div {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:5px solid black;
+    margin:10%;
+    padding:10%;
+}
+
+a, button {
+    display:flex;
+    flex-wrap:wrap;
+    margin:10%;
+    border:3px solid black;
+    background-color: rgb(139, 139, 211);
+    padding:5%;
+    width: 100px;
+    text-align: center;
+    color:black;
+}
+
+a, button:hover{
+    cursor: pointer;
+}
+
+h3 {
+    border: 4mm ridge rgb(139, 139, 211);
+    padding: 5%;
+}
