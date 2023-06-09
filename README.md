@@ -1,4 +1,4 @@
-# SociallySocial
+# What A Lovely Blog!
       
 ## Description
 This is a CMS style blog in which you can create posts, comment on other's posts, and edit and delete your own.  The site has full login and signup functionality to boot.
