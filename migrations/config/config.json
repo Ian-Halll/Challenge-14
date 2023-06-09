@@ -11,5 +11,5 @@
     "use_env_variable": "DATABASE_URL",
     "dialect": "mysql"
   },
-  "DATABASE_URL": "mysql://gmm7zinl88z3c3i7:l7enmpc8x3ga3uku@w3epjhex7h2ccjxx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ewiy80kzh84362gt"
+
 }
