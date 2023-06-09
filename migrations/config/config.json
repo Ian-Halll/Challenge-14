@@ -4,7 +4,7 @@
     "password": "amongus",
     "database": "techblog_db",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3001,
     "dialect": "mysql"
   },
   "test": {
@@ -12,7 +12,7 @@
     "password": "amongus",
     "database": "techblog_db",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3001,
     "dialect": "mysql"
   },
   "production": {
@@ -20,7 +20,7 @@
     "password": "amongus",
     "database": "techblog_db",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3001,
     "dialect": "mysql"
   }
 }
