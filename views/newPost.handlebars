@@ -1,0 +1,16 @@
+<div>
+  <h1>Create New Post</h1>
+
+  <form action="/dashboard/new" method="POST">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="title" required>
+    </div>
+    <div>
+      <label for="post-body">Body</label>
+      <textarea id="post-body" name="body" rows="4" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<a href="/" id="backbutton">Back</a>

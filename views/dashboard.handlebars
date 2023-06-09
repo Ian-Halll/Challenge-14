@@ -12,7 +12,8 @@
 
   <h1>My Dashboard</h1>
 
-  <a href="/posts/new">Create New Post</a> <!-- Updated 'href' attribute -->
+<a href="/dashboard/new" id="create-post-link">Create New Post</a>
+
 
   {{#if posts}}
     {{#each posts}}
@@ -30,3 +31,5 @@
     <p>No posts found.</p>
   {{/if}}
 </div>
+
+<a href="/" id="backbutton">Back</a>

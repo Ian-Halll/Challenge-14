@@ -6,6 +6,9 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
+      where: {
+        userId: req.session.user_id // Filter posts by user ID
+      },
       include: [
         {
           model: User,
@@ -22,8 +25,7 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-// Render the new post form
-router.get('/newPost', withAuth, async (req, res) => {
+router.get('/new', withAuth, async (req, res) => {
   try {
     res.render('newPost', { logged_in: true });
   } catch (err) {
@@ -32,17 +34,18 @@ router.get('/newPost', withAuth, async (req, res) => {
 });
 
 // Create a new post
-router.post('/posts/new', withAuth, async (req, res) => {
+router.post('/new', withAuth, async (req, res) => {
   try {
     const newPostData = await Post.create({
       title: req.body.title,
-      body: req.body.content,
-      userId: req.session.user_id,
+      body: req.body.body,
+      user_id: req.session.user_id,
     });
 
     res.redirect('/dashboard');
   } catch (err) {
-    res.status(400).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 

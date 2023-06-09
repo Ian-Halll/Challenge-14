@@ -15,7 +15,7 @@ div {
 a, button {
     display:flex;
     flex-wrap:wrap;
-    margin:10%;
+    margin:5%;
     border:3px solid black;
     background-color: rgb(139, 139, 211);
     padding:5%;
@@ -31,4 +31,19 @@ a, button:hover{
 h3 {
     border: 4mm ridge rgb(139, 139, 211);
     padding: 5%;
+    background-color: rgb(233, 200, 233)
+}
+
+#backbutton{
+    position:absolute;
+    left:6%;
+    top:10%;
+    margin:5%;
+    border:3px solid black;
+    background-color: rgb(139, 139, 211);
+   
+    width: 50px;
+    text-align: center;
+    color:black;
+
 }

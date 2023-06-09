@@ -27,5 +27,37 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 
+  // Create a new comment
+router.post('/api/posts/:postId/comments', async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      body: req.body.body,
+      postId: req.params.postId,
+      userId: req.session.user_id, 
+    });
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Retrieve comments for a specific post
+router.get('/api/posts/:postId/comments', async (req, res) => {
+  try {
+    const postId = req.params.postId;
+
+    const comments = await Comment.findAll({
+      where: { postId },
+    });
+
+    res.status(200).json(comments);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+module.exports = router;
+
 
 module.exports = router;
