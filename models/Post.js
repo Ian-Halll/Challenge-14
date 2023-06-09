@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+const User = require('./User'); // Import the User model
 
 class Post extends Model {}
 
@@ -18,7 +18,7 @@ Post.init(
     body: {
       type: DataTypes.STRING,
     },
-    createdAt: { 
+    createdAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
@@ -39,6 +39,7 @@ Post.init(
   }
 );
 
-
+// Include the username field from the User model
+Post.belongsTo(User, { foreignKey: 'userId', as: 'User' });
 
 module.exports = Post;
