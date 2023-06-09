@@ -9,7 +9,7 @@
     "dev": "nodemon server.js",
     "seed": "node seeds/seed.js",
     "db:migrate": "npx sequelize-cli db:migrate",
-    "heroku-postbuild": "npm run db:migrate && npm run start"
+    "heroku-postbuild": "npm run db:migrate"
   },
   "keywords": [],
   "author": "",
