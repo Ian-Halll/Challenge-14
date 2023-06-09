@@ -1,6 +1,6 @@
 <div>
   <nav>
-    <a href="/">Home</a> <!-- Updated 'href' attribute -->
+    <a href="/">Home</a> 
     {{#if logged_in}}
       <a href="/dashboard">Dashboard</a>
       <a href="/" id="logout">Log Out</a>
@@ -12,8 +12,7 @@
 
   <h1>My Dashboard</h1>
 
-<a href="/dashboard/new" id="create-post-link">Create New Post</a>
-
+  <a href="/dashboard/new" id="create-post-link">Create New Post</a>
 
   {{#if posts}}
     {{#each posts}}

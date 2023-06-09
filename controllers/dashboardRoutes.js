@@ -15,6 +15,7 @@ router.get('/', withAuth, async (req, res) => {
           attributes: ['username'],
         },
       ],
+      order: [['createdAt', 'DESC']] // Sort posts by descending order of creation
     });
 
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -39,7 +40,7 @@ router.post('/new', withAuth, async (req, res) => {
     const newPostData = await Post.create({
       title: req.body.title,
       body: req.body.body,
-      user_id: req.session.user_id,
+      userId: req.session.user_id, // Update user_id to userId
     });
 
     res.redirect('/dashboard');
