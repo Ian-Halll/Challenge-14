@@ -1,0 +1,32 @@
+<div>
+  <nav>
+    <a href="/">Home</a> <!-- Updated 'href' attribute -->
+    {{#if logged_in}}
+      <a href="/dashboard">Dashboard</a>
+      <a href="/" id="logout">Log Out</a>
+    {{else}}
+      <a href="/login">Dashboard</a>
+      <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+
+  <h1>My Dashboard</h1>
+
+  <a href="/posts/new">Create New Post</a> <!-- Updated 'href' attribute -->
+
+  {{#if posts}}
+    {{#each posts}}
+      <div class="post">
+        <a href="/post/{{id}}">
+          <h2>{{title}} &#9662;</h2>
+        </a>
+        <h3>{{body}}</h3>
+        <p>Published by: {{User.username}}</p>
+        <button class="delete-btn" data-id="{{id}}">Delete</button>
+        <button class="edit-btn" data-id="{{id}}">Edit</button>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No posts found.</p>
+  {{/if}}
+</div>

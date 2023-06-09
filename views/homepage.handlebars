@@ -1,18 +1,24 @@
 <div>
     <nav>
         <a href="/">Home</a>
-        <a href="/dashboard">Dashboard</a>
-    {{#if logged_in}}
-<a href="/">Log Out</a>
-    {{/if}}
-    {{#unless logged_in}}
-        <a href="/login">Login</a>
-    {{/unless}}
- 
+        
+        {{#if logged_in}}
+            <a href="/login">Dashboard</a>
+            <a href="/" id="logout">Log Out</a>
+        {{/if}}
+        {{#unless logged_in}}
+            <a href="/dashboard">Dashboard</a>
+            <a href="/login">Login</a>
+        {{/unless}}
     </nav>
 
     {{#each posts}}
-     <h2> {{title}} </h2>
-     <h3> {{body}} </h3>
+        <a href="/post/{{id}}">
+            <h2>{{title}} &#9662;</h2>
+        </a>
+        <h3>{{body}}</h3>
+        <p>Created {{format_date createdAt}}</p> 
     {{/each}}
 </div>
+
+<script src="/js/logout.js"></script>
