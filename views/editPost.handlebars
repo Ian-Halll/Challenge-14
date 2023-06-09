@@ -1,0 +1,29 @@
+<div>
+  <nav>
+    <a href="/">Home</a> 
+    {{#if logged_in}}
+      <a href="/dashboard">Dashboard</a>
+      <a href="/" id="logout">Log Out</a>
+    {{else}}
+      <a href="/login">Dashboard</a>
+      <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+
+  <h1>Edit Post</h1>
+
+  <form action="/dashboard/edit/{{post.id}}" method="POST">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" value="{{post.title}}">
+    </div>
+    <div>
+      <label for="body">Body:</label>
+      <textarea id="body" name="body">{{post.body}}</textarea>
+    </div>
+    <button type="submit">Update Post</button>
+  </form>
+
+</div>
+
+<a href="/dashboard" id="backbutton">Back</a>

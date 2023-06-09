@@ -11,7 +11,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
+
 const hbs = exphbs.create({ helpers });
 
 const sess = {
@@ -46,28 +46,3 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening on port', PORT));
 });
 
-//Set up models
-
-//Set up server
-
-//Set up seeds and run
-
-//Set up views
-
-//set up HTML routes
-//homepage routes
-//all curent user blog posts
-//add new blog posts
-//dashboard routes
-
-
-//set up API routes
-//create comment
-//create new post
-//update post
-//delete post
-
-
-//Set up JS files
-
-//Styling

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        location.reload(); // Reload the page to update the dashboard
+        location.reload(); 
       } else {
         alert('Failed to create post.');
       }

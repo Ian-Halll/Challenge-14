@@ -22,8 +22,10 @@
         </a>
         <h3>{{body}}</h3>
         <p>Published by: {{User.username}}</p>
-        <button class="delete-btn" data-id="{{id}}">Delete</button>
-        <button class="edit-btn" data-id="{{id}}">Edit</button>
+        <form action="/dashboard/delete/{{id}}" method="POST">
+          <button class="delete-btn">Delete</button>
+        </form>
+        <a href="/dashboard/edit/{{id}}" class="edit-btn">Edit</a>
       </div>
     {{/each}}
   {{else}}

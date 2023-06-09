@@ -9,7 +9,6 @@ const handleCommentFormSubmit = async (event) => {
   
     if (commentBody) {
       try {
-        // Send a POST request to create a new comment
         const response = await fetch(`/api/posts/${postId}/comments`, {
           method: 'POST',
           body: JSON.stringify({ body: commentBody }),
@@ -17,7 +16,6 @@ const handleCommentFormSubmit = async (event) => {
         });
   
         if (response.ok) {
-          // If the comment is created successfully, reload the page to display the new comment
           location.reload();
         } else {
           alert('Failed to create comment.');
@@ -31,7 +29,6 @@ const handleCommentFormSubmit = async (event) => {
     }
   };
   
-  // Event listener for comment form submission
   const commentForm = document.querySelector('#comment-form');
   if (commentForm) {
     commentForm.addEventListener('submit', handleCommentFormSubmit);

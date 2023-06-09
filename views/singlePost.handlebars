@@ -1,25 +1,26 @@
 <div>
-    <h2>{{post.title}}</h2>
-    <h3>{{post.body}}</h3>
-    <p>Published by: {{post.User.username}}</p>
-    <p>Date Created: {{format_date post.createdAt}}</p>
+  <h2>{{post.title}}</h2>
+  <h3>{{post.body}}</h3>
+  <p>Published by: {{post.User.username}}</p>
+  <p>Date Created: {{format_date post.createdAt}}</p>
 
-    <form id="comment-form">
-        <textarea id="comment-body" rows="4" cols="50" placeholder="Enter your comment"></textarea>
-        <button type="submit">Submit Comment</button>
-    </form>
+  <form id="comment-form">
+    <textarea id="comment-body" rows="4" cols="50" placeholder="Enter your comment"></textarea>
+    <input type="hidden" id="post-id" value="{{post.id}}">
+    <button type="submit">Submit Comment</button>
+  </form>
 
-    {{#if post.Comments}}
-        <h4>Comments:</h4>
-        {{#each post.Comments}}
-            <div>
-                <p>{{body}}</p>
-                <p>Comment by: {{User.username}}</p>
-                <p>Date Created: {{format_date createdAt}}</p>
-            </div>
-        {{/each}}
-    {{/if}}
+  {{#if post.Comments}}
+    <h4>Comments:</h4>
+    {{#each post.Comments}}
+      <div>
+        <p>{{body}}</p>
+        <p>Comment by: {{User.username}}</p>
+        <p>Date Created: {{format_date createdAt}}</p>
+      </div>
+    {{/each}}
+  {{/if}}
 </div>
 
-<script src="/js/comment.js"></script>
+<script src="/js/comments.js"></script>
 <a href="/" id="backbutton">Back</a>
